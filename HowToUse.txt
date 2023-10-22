@@ -1,0 +1,11 @@
+1. Clone the Repository:
+	> git clone https://github.com/M-Zeineddine/BSynchroTaskFrontend.git
+   	> cd BSynchroTaskFrontend
+
+2. Install Dependencies:
+	> npm install
+
+3. Run the Frontend Application:
+
+   	> npm start
+	
