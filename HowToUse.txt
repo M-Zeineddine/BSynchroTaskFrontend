@@ -8,4 +8,21 @@
 3. Run the Frontend Application:
 
    	> npm start
-	
+
+How to use:
+	The project consists of 2 pages. One that can create a new account for a specified customer, and one you can view account details for a specified customer or add transactions for specified account.
+	The routing can be done easily from page to page since each page has a button that navigates to the other page.
+	When adding a transaction:
+		If you entered an account id that doesn't exist, an error will occur.
+		If you entered 0 in the amount, an error will occur.
+		If you entered a negative number, it will be detucted from the balance, unless the number is bigger than the balance, then an error will occur.
+		If you entered a positive number, the transaction will be made.
+
+	When fetching account details:
+		If you entered a customer id that doesn't exist, an error will occur.
+
+	When adding a new account for a customer:
+		If you entered a customer id that doesn't exist, an error will occur.
+		If you entered a negative initial credit, an error will occur.
+		If you entered 0 as an initial credit, an account will be created for the specified use but without any transactions.
+		If you entered a positive number greater than 0, an account will be created for the specified user, with a new transaction for the new account.
