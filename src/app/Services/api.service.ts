@@ -26,4 +26,9 @@ export class ApiService {
   getCustomerDetails(customerId: number): Observable<any> {
     return this.http.get(`${this.BASE_URL}Accounts/${customerId}/details`);
   }
+
+  //Makes a POST request to create a new transaction for a specified account
+  addTransaction(data: any): Observable<any> {
+    return this.http.post(`${this.TRANSACTION_URL}add`, data);
+  }
 }

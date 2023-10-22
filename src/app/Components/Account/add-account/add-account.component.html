@@ -1,20 +1,31 @@
-<form (ngSubmit)="onSubmit()">
-    <label>
-        Customer ID:
-        <input type="number" [(ngModel)]="data.customerId" name="customerId" required>
-    </label>
+<div class="details-container">
 
-    <label>
-        Initial Credit:
-        <input type="number" [(ngModel)]="data.initialCredit" name="initialCredit">
-    </label>
-
-    <button type="submit">Create Account</button>
-
-    <div *ngIf="errorMessage" class="error">
-        {{ errorMessage }}
+    <h2>View Customer Details</h2>
+    <div class="nav-button-container" style="margin-top: 20px;">
+        <button style="float: right;" routerLink="/customer-details">View</button>
     </div>
-    <div *ngIf="successMessage" class="success">
-        {{ successMessage }}
-    </div>
-</form>
+
+    <form (ngSubmit)="onSubmit()" class="clearfix">
+        <h2 style="margin-top: 40px;">Create Account</h2>
+
+        <div class="input-group">
+            <label for="customerId">Customer ID:</label>
+            <input type="number" [(ngModel)]="data.customerId" id="customerId" name="customerId" required>
+        </div>
+
+        <div class="input-group">
+            <label for="initialCredit">Initial Credit:</label>
+            <input type="number" [(ngModel)]="data.initialCredit" id="initialCredit" name="initialCredit">
+        </div>
+
+        <button type="submit" class="transaction-add-button">Create Account</button>
+
+        <div *ngIf="errorMessage" class="error">
+            {{ errorMessage }}
+        </div>
+        <div *ngIf="successMessage" class="success">
+            {{ successMessage }}
+        </div>
+    </form>
+
+</div>
