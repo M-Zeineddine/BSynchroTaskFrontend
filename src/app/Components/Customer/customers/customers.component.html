@@ -1,0 +1,26 @@
+<h2>Customer ID Input</h2>
+<div>
+    <label for="customerId">Customer ID:</label>
+    <input type="number" [(ngModel)]="customerId" id="customerId">
+    <button (click)="fetchCustomerDetails()">Get Details</button>
+    <div *ngIf="errorMessage" class="error">
+        {{ errorMessage }}
+    </div>
+</div>
+
+<h2>Customer Details</h2>
+<p>Name: {{ customerDetails?.result.firstName }} {{ customerDetails?.result.lastName }}</p>
+<p>Total Balance: {{ customerDetails?.result.totalBalance }}</p>
+
+<h3>Accounts</h3>
+<div *ngFor="let account of customerDetails?.result.accounts">
+    <p>Account ID: {{ account.id }}</p>
+    <p>Balance: {{ account.balance }}</p>
+
+    <h4>Transactions</h4>
+    <ul>
+        <li *ngFor="let transaction of account.transactions">
+            {{ transaction.amount }} at {{ transaction.date }}
+        </li>
+    </ul>
+</div>

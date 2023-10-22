@@ -1,0 +1,20 @@
+<form (ngSubmit)="onSubmit()">
+    <label>
+        Customer ID:
+        <input type="number" [(ngModel)]="data.customerId" name="customerId" required>
+    </label>
+
+    <label>
+        Initial Credit:
+        <input type="number" [(ngModel)]="data.initialCredit" name="initialCredit">
+    </label>
+
+    <button type="submit">Create Account</button>
+
+    <div *ngIf="errorMessage" class="error">
+        {{ errorMessage }}
+    </div>
+    <div *ngIf="successMessage" class="success">
+        {{ successMessage }}
+    </div>
+</form>
