@@ -7,6 +7,8 @@ import {
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.css']
 })
+
+//Fetches and displays details of a specific customer based on the provided customerId
 export class CustomersComponent {
 
   constructor(private apiService: ApiService) { }
@@ -18,6 +20,8 @@ export class CustomersComponent {
   ngOnInit(): void {
   }
 
+  //Validates the customerId input and then calls the ApiService to fetch the details of the specified customer
+  //On response, it either updates the customerDetails or sets the errorMessage based on the API's response
   fetchCustomerDetails() {
     if (this.customerId == undefined) {
       this.customerId = 0
