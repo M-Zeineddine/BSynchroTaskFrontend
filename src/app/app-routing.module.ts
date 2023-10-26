@@ -5,6 +5,7 @@ import { CustomersComponent } from './Components/Customer/customers/customers.co
 
 const routes: Routes = [
   { path: 'add-account', component: AddAccountComponent },
+  { path: '', component: AddAccountComponent },
   { path: 'customer-details', component: CustomersComponent }
 ];
 
